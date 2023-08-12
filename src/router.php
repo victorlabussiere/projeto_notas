@@ -6,14 +6,16 @@ $path = [
     'home' => ['path' => './src/controllers/home.php', 'heading' => 'Home'],
     'notas' => ['path' => './src/controllers/notas.php', 'heading' => 'Notas'],
     'about' => ['path' => './src/controllers/about.php', 'heading' => 'Sobre nós'],
-    'contact' => ['path' => './src/controllers/contact.php', 'heading' => 'Contato']
+    'contact' => ['path' => './src/controllers/contact.php', 'heading' => 'Contato'],
+    'note' => ['path' => './src/controllers/note.php', 'heading' => 'Nota']
 ];
 
 $routes = [
     '/' => $path['home'],
     '/notes' => $path['notas'],
     '/about' => $path['about'],
-    '/contact' => $path['contact']
+    '/contact' => $path['contact'],
+    '/note' => $path['note']
 ];
 
 function routeToController($uri, $routes)

@@ -11,19 +11,9 @@ if (isset($_GET['id'])) {
     $query = 'select * from texts where id > ?';
 }
 
-$notes = $db->query(
+$text = $db->query(
     $query,
     [$id]
-)->fetchAll();
+)->fetch();
 
-function renderList($notes)
-{
-    foreach ($notes as $note) {
-        echo
-        "<a class='block text-lime-600 hover:text-lime-700 hover:underline' href='/note?id={$note['id']}'>
-            {$note['body']}
-        </a>";
-    }
-}
-
-require __DIR__ . '/../views/pages/notes.view.php';
+require __DIR__ . '/../views/pages/note.view.php';
