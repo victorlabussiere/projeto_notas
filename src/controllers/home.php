@@ -1,3 +1,3 @@
 <?php
-$heading = 'Home';
-require __DIR__  . '/../views/home.view.php';
+$heading = $routes[$uri]['heading'];
+require __DIR__  . '/../views/pages/home.view.php';

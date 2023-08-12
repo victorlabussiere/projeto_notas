@@ -2,24 +2,32 @@
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
+$path = [
+    'home' => ['path' => './src/controllers/home.php', 'heading' => 'Home'],
+    'notas' => ['path' => './src/controllers/notas.php', 'heading' => 'Notas'],
+    'about' => ['path' => './src/controllers/about.php', 'heading' => 'Sobre nós'],
+    'contact' => ['path' => './src/controllers/contact.php', 'heading' => 'Contato']
+];
+
 $routes = [
-    '/' => './src/controllers/home.php',
-    '/about' => './src/controllers/about.php',
-    '/notes' => './src/controllers/notes.php'
+    '/' => $path['home'],
+    '/notes' => $path['notas'],
+    '/about' => $path['about'],
+    '/contact' => $path['contact']
 ];
 
 function routeToController($uri, $routes)
 {
     if (!array_key_exists($uri, $routes)) {
-        abortTo404();
+        return abortTo404();
     }
 
-    require $routes[$uri];
+    require $routes[$uri]['path'];
 }
 
 function abortTo404($code = 404)
 {
     http_response_code($code);
-    require __DIR__ . "/views/{$code}.php";
+    require __DIR__ . "/views/pages/{$code}.php";
     die();
 }
