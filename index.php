@@ -1,6 +1,11 @@
 <?php
 require './src/functions.php';
 require './src/router.php';
+require './src/Response.php';
+require './src/models/Database.php';
+
+$config = require("./src/models/config.php");
+$db = new Database($config['database']);
 
 $heading = array_key_exists($uri, $routes) ? $routes[$uri]['heading'] : '404 Not Found';
 ?>
