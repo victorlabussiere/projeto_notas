@@ -4,6 +4,6 @@
   },
   "scripts": {
     "dev" : "php -S localhost:3000",
-    "css-build" : "npx tailwind -i ./input.css -o ./output.css --watch"
+    "css-build" : "npx tailwind -i ./input.css -o ./public/output.css --watch"
   }
 }
