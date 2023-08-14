@@ -1,5 +1,10 @@
 <section>
-    <ul class='flex flex-col gap-4 p-4 w-full self-start'>
+
+    <a href="/create" class="text-base text-neutral-50 gap-2 font-semibold rounded-full px-5 py-1 flex items-center duration-100 bg-lime-600 hover:bg-lime-500 hover:transition-all">
+        <i class='material-symbols-outlined w-min p-0'>add</i> Nova Nota
+    </a>
+
+    <ul class='flex flex-col gap-4 p-4 w-full self-start overflow-y-scroll max-h-80'>
 
         <?php if (isset($notes) === false) : ?>
 
@@ -21,8 +26,6 @@
 
     </ul>
 
-    <a href="/create" class="text-base text-lime-600 gap-2 font-semibold border-lime-600 border rounded-full px-5 py-1 flex items-center duration-100 hover:bg-lime-600 hover:text-gray-50 hover:transition-all">
-        <i class='material-symbols-outlined w-min p-0'>add</i> Nova Nota
-    </a>
+
 
 </section>
