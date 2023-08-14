@@ -1,7 +1,15 @@
 <?php
-$config = require("./src/models/config.php");
-$db = new Database($config['database']);
+$config = (require BASE_PATH . "src/models/config.php")['database'];
+
+$db = new Database($config);
+
 $query = 'select * from texts';
 $notes = $db->query($query)->get();
 
-require 'src/views/pages/notes/index.view.php';
+view(
+    'notes/index',
+    [
+        'notes' => $notes,
+        'query' => $query
+    ]
+);

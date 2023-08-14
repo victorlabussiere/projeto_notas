@@ -1,3 +1,5 @@
 <?php
-$heading = $routes[$uri]['heading'];
-require __DIR__ . '/../views/pages/contact.view.php';
+
+view('contact', [
+    'heading' => $routes[$uri]['heading']
+]);

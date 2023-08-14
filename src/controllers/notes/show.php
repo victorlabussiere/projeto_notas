@@ -1,5 +1,6 @@
 <?php
-$config = require("./src/models/config.php");
+$config = require base_path("/src/models/config.php");
+
 $db = new Database($config['database']);
 
 $id = $_GET['id'];
@@ -17,4 +18,7 @@ $user = $db->query(
 
 authorizate($text['user_id'] === 1);
 
-require 'src/views/pages/notes/show.view.php';
+view('/notes/show', [
+    'user' => $user,
+    'text' => $text
+]);

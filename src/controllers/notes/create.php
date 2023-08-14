@@ -1,14 +1,14 @@
 <?php
-$config = require 'src/models/config.php';
+$config = require base_path('src/models/config.php');
 $db = new Database($config['database']);
-require 'src/models/Validator.php';
+require base_path('src/models/Validator.php');
 
+$errors = [];
 if (Validator::email('visdasd')) {
     dd('invalido');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $errors = [];
 
     if (!Validator::string(
         $_POST['body'],
@@ -26,9 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'user_id' => 1
             ]
         );
+        header('location:  /notes');
     }
-
-    header('location:  /notes');
 }
 
-require 'src/views/pages/notes/create.view.php';
+view('notes/create', [
+    'errors' => $errors
+]);

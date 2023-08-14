@@ -1,6 +1,6 @@
 <?php
 
-$router = require(__DIR__ . '/routes.php');
+$router = require(BASE_PATH . 'src/routes.php');
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
@@ -10,12 +10,12 @@ function routeToController($uri, $routes)
         return abort();
     }
 
-    require $routes[$uri]['path'];
+    require BASE_PATH . $routes[$uri]['path'];
 }
 
 function abort($code = 404)
 {
     http_response_code($code);
-    require __DIR__ . "/views/pages/{$code}.php";
+    require  BASE_PATH . "src/views/pages/{$code}.php";
     die();
 }
