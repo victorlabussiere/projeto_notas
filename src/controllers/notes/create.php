@@ -1,7 +1,7 @@
 <?php
-$config = require __DIR__ . '/../models/config.php';
+$config = require 'src/models/config.php';
 $db = new Database($config['database']);
-require __DIR__ . '/../models/Validator.php';
+require 'src/models/Validator.php';
 
 if (Validator::email('visdasd')) {
     dd('invalido');
@@ -27,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]
         );
     }
+
+    header('location:  /notes');
 }
 
-require __DIR__ . '/../views/pages/notes-create.view.php';
+require 'src/views/pages/notes/create.view.php';

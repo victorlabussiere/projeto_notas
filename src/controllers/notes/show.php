@@ -17,4 +17,4 @@ $user = $db->query(
 
 authorizate($text['user_id'] === 1);
 
-require __DIR__ . '/../views/pages/note.view.php';
+require 'src/views/pages/notes/show.view.php';
