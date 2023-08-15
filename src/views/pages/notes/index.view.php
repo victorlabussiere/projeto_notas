@@ -1,8 +1,16 @@
-<section>
+<section class="flex flex-col items-center gap-8">
+    <header class='flex gap-10 w-full items-center justify-end'>
+        <h3 class="text-3xl font-bold text-lime-700 justify-self-start place-self-start mr-auto">Todas as Notas</h3>
 
-    <a href="/create" class="text-base text-neutral-50 gap-2 font-semibold rounded-full px-5 py-1 flex items-center duration-100 bg-lime-600 hover:bg-lime-500 hover:transition-all">
-        <i class='material-symbols-outlined w-min p-0'>add</i> Nova Nota
-    </a>
+        <a href="/" class="text-base font-semibold border-lime-700 text-lime-700 flex items-center duration-100 hover-2px-left">
+            <i class='material-symbols-outlined w-min p-0'>arrow_left</i>Voltar
+        </a>
+
+        <div role='button' class="flex items-center bg-lime-700 gap-2 pr-3 text-slate-50 font-semibold rounded-lg self-center cursor-pointer duration-150 hover:bg-lime-600 iconEnviar">
+            <a href="/create" value="Criar" class='cursor-pointer ml-3 mr-1 py-2 font-sans'>Adicionar Nota</a>
+        </div>
+
+    </header>
 
     <ul class='flex flex-col gap-4 p-4 w-full self-start overflow-y-scroll max-h-80'>
 
