@@ -10,15 +10,15 @@ if (Validator::email('visdasd')) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (!Validator::string(
+    if (Validator::string(
         $_POST['body'],
         0,
         1000
-    )) {
+    ) === true) {
         $errors['body'] = 'O campo precisa preenchido e possuir até 1.000 caracteres para prosseguir';
     }
 
-    if (empty($errors)) {
+    if (empty($errors) === true) {
         $db->query(
             'insert into texts(body, user_id) values (:body, :user_id);',
             [
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'user_id' => 1
             ]
         );
-        header('location:  /notes');
+        header('location: /notes');
     }
 }
 
