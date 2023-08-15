@@ -2,16 +2,19 @@
 const BASE_PATH = __DIR__ . '/../';
 
 require BASE_PATH . './src/functions.php';
+
+spl_autoload_register(function ($class) {
+    require base_path("src/models/{$class}.php");
+});
+
 require BASE_PATH . './src/router.php';
 require BASE_PATH . './src/Response.php';
-require BASE_PATH . './src/models/Database.php';
-
 
 $config = require(BASE_PATH . "./src/models/config.php");
 $db = new Database($config['database']);
 
+$heading = array_key_exists($uri, $routes) === true ? $routes[$uri]['heading'] : '404 Not Found';
 
-$heading = array_key_exists($uri, $routes) ? $routes[$uri]['heading'] : '404 Not Found';
 ?>
 
 <!DOCTYPE html>
