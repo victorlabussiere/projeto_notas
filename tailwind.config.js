@@ -5,7 +5,8 @@ module.exports = {
     './components/**/*.{php,html,js}',
     './src/**/*.{php,js}',
     '**/*.php',
-    'index.php'
+    'index.php',
+    'input.css'
   ],
   theme: {
     extend: {},
