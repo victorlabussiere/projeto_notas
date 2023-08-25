@@ -12,7 +12,7 @@ function base_path($file)
     return BASE_PATH . $file;
 }
 
-require base_path('Core/functions.php');
+require base_path('functions.php');
 function view($path, $attributes = [])
 {
     extract($attributes);
@@ -27,7 +27,7 @@ spl_autoload_register(function ($class) {
     require base_path("{$class}.php");
 });
 
-$config = require base_path('Core/config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $router = new Router();

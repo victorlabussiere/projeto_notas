@@ -2,7 +2,7 @@
 
 use Core\Database;
 
-$config = require base_path('Core/config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $currentUserId = 1;

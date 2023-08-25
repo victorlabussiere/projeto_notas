@@ -2,7 +2,7 @@
 
 use Core\Database;
 
-$config = (require BASE_PATH . "Core/config.php")['database'];
+$config = (require BASE_PATH . "config.php")['database'];
 
 $db = new Database($config);
 
