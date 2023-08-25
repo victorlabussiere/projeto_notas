@@ -11,21 +11,16 @@ function dd($value)
     die();
 }
 
+function abort($code = 404)
+{
+    http_response_code($code);
+    require  BASE_PATH . "views/pages/{$code}.php";
+    die();
+}
+
 function authorizate($condition, $status = Response::FORBIDDEN)
 {
     if (!$condition) {
         abort($status);
     }
-}
-
-function base_path($path)
-{
-    return BASE_PATH . $path;
-}
-
-function view($path, $attributes = [])
-{
-    extract($attributes);
-
-    require base_path('views/pages/' . $path . '.view.php');
 }
