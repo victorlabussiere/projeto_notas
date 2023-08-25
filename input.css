@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .topbar {
+    @apply w-screen flex items-center justify-between px-20 bg-lime-300 font-semibold text-lime-600;
+  }
+
+  .topbar > div {
+    @apply flex items-center h-full;
+  }
+
+  .topbar_link {
+    @apply flex w-full font-semibold h-full px-10 py-4 hover-2px-down;
+  }
+
+  .section_align {
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
+
+  main section {
+    @apply p-10 shadow rounded-lg bg-slate-50 w-9/12 flex flex-col items-center gap-4 justify-center mx-auto;
+  }
+
+  .test {
+    @apply border-solid border-red-500 border;
+  }
+
+  .hover-2px-down {
+    @apply transition duration-300 hover:translate-y-0.5;
+  }
+  .hover-2px-left {
+    @apply transition duration-300 hover:-translate-x-0.5;
+  }
+
+  .iconEnviar::after {
+    content: 'add';
+    font-family: 'Material Symbols Outlined';
+    width: min-content;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,5 +1,5 @@
 <?php
 
 view('contact', [
-    'heading' => $routes[$uri]['heading']
+    'heading' => 'Contate-nos'
 ]);

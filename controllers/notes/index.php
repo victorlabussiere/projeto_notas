@@ -12,6 +12,7 @@ $notes = $db->query($query)->get();
 view(
     'notes/index',
     [
+        'heading' => 'Suas notas',
         'notes' => $notes,
         'query' => $query
     ]

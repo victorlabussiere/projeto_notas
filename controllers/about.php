@@ -1,5 +1,5 @@
 <?php
 
-view(
-    'about'
-);
+view('about', [
+    'heading' => 'Sobre nós'
+]);

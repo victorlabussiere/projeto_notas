@@ -36,5 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 view('notes/create', [
-    'errors' => $errors
+    'errors' => $errors,
+    'heading' => "Nova nota"
 ]);
