@@ -1,6 +1,6 @@
 <?php
 
-use Cores\Response;
+use Core\Response;
 
 function dd($value)
 {

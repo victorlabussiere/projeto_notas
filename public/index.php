@@ -1,12 +1,11 @@
 <?php
 
-use Core\Router;
-use Core\Database;
-
+use Core\App;
 
 const BASE_PATH = __DIR__ . '/../';
 
 require base_path('Core/Response.php');
+
 function base_path($file)
 {
     return BASE_PATH . $file;
@@ -27,13 +26,11 @@ spl_autoload_register(function ($class) {
     require base_path("{$class}.php");
 });
 
-$config = require base_path('config.php');
-$db = new Database($config['database']);
+// BOOTSTRAP CONTAINERS
+require base_path('bootstrap.php');
+require base_path('routes.php');
 
-$router = new Router();
-$routes = require base_path('routes.php');
-
+// SETTING ROUTER
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
-
-$router->route($uri, $method);
+App::resolve('Core\Router')->route($uri, $method);

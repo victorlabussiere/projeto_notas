@@ -1,10 +1,8 @@
 <?php
 
-use Core\Database;
+use Core\App;
 
-$config = (require BASE_PATH . "config.php")['database'];
-
-$db = new Database($config);
+$db = App::resolve(Core\Database::class);
 
 $query = 'select * from texts';
 $notes = $db->query($query)->get();
