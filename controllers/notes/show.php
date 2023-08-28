@@ -16,6 +16,7 @@ $user = $db->query(
     'select * from users where id = :id',
     ['id' => 1]
 )->findOrFail();
+
 authorizate($text['user_id'] === 1);
 
 view('/notes/show', [

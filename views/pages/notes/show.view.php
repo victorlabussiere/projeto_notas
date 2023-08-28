@@ -27,11 +27,13 @@ require base_path('views/partials/banner.php');
             </q>
         </div>
 
-        <form action="/note" method="POST">
+        <form action="/note" method="POST" class="w-full flex items-center justify-end gap-4">
             <input type="hidden" name="_method" value='delete'>
             <input type="hidden" name="id" value='<?= $_GET['id'] ?>'>
 
-            <input class="px-4 py-2 rounded bg-red-500 text-white shadow-md" type="submit" value="Deletar Nota">
+            <a class="rounded border-lime-700 border text-lime-700 px-5 py-2" href="note/edit?id=<?= $text['id'] ?>">Editar</a>
+
+            <input class="px-5 py-2 rounded bg-red-500 text-white shadow-md" type="submit" value="Deletar Nota">
         </form>
     </section>
 
