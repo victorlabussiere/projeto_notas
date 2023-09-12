@@ -21,5 +21,8 @@ App::bind('Core\Router', function () {
     $router->get('/note/edit', 'controllers/notes/edit.php');
     $router->patch('/note', 'controllers/notes/update.php');
 
+    $router->get('/register', 'controllers/register/create.php');
+    $router->post('/register', 'controllers/register/store.php');
+
     return $router;
 });
