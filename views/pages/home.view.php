@@ -5,7 +5,6 @@ require base_path('views/partials/banner.php');
 ?>
 <main class="h-full w-full flex flex-col py-10">
     <section>
-        <a href="/register">Criar usuário</a>
         Home funcionando
     </section>
 </main>
