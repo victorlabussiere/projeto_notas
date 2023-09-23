@@ -43,7 +43,7 @@
     @apply text-red-500 mb-4 text-sm self-start;
   }
 
-  .errorSpan.hideSpan {
+  .hideTag {
     display: none;
     visibility: hidden;
     @apply w-0 h-0;
