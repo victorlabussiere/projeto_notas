@@ -2,19 +2,30 @@
 
 use Core\App;
 
-// validate the form -> with javascript at client side
-
-// check if account already exists
-// if so, redirect to login page
-
+$name = $_POST['name'];
+$senha = $_POST['senha'];
+$email = $_POST['email'];
 
 $db = App::resolve('Core\Database');
-$result = $db->query('select * from users where email = :email', [
+
+$user = $db->query('select * from users where email = :email', [
     'email' => $_POST['email']
 ])->find();
 
-if ($result) {
-    dd($result);
-}
+if ($user) {                        // check if account already exists
+    header('location: /');  // if so, redirect to login page
+    exit();
+} else {                            // if not, save on the database and then, log in the user and redirect
+    $db->query('INSERT into users (nome, senha, email) values (:nome, :senha, :email)', [
+        'nome' => $name,
+        'senha' => $senha,
+        'email' => $email
+    ]);
 
-    // if not, save on the database and then, log in the user and redirect
+    $_SESSION['user'] = [
+        'email' => $email
+    ];
+
+    header('location: /');
+    exit();
+}

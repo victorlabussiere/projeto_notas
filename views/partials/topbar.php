@@ -6,5 +6,10 @@
             <a href="/notes" class='topbar_link'>Notas</a>
             <a href="/contact" class='topbar_link'>Contato</a>
             <a href="/about" class='topbar_link'>Sobre</a>
+            <?php if ($_SESSION['user'] ?? false) : ?>
+                <p class="text-lime-900">You are signed in!</p>
+            <?php else : ?>
+                <a href="/register" class='topbar_link'>Cadastrar</a>
+            <?php endif ?>
         </div>
     </nav>
