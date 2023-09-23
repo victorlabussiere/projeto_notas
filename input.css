@@ -12,7 +12,7 @@
   }
 
   .topbar_link {
-    @apply flex w-full font-semibold h-full px-10 py-4 hover-2px-down;
+    @apply flex font-semibold h-full px-10 py-4 hover-2px-down;
   }
 
   .section_align {

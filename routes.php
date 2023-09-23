@@ -11,23 +11,17 @@ App::bind('Core\Router', function () {
     $router->get('/about', 'controllers/about.php');
     $router->get('/contact', 'controllers/contact.php');
 
-    // ALL NOTERS ROUTER
-    $router->get('/notes', 'controllers/notes/index.php');
-
-    // CREATE NOTE ROUTER
-    $router->get('/notes/create', 'controllers/notes/create.php');
-    $router->post('/notes/create', 'controllers/notes/store.php');
-
-    // SHOW NOTE DETAILS ROUTER
+    // NOTES 
+    $router->get('/notes', 'controllers/notes/index.php')->only('auth');
     $router->get('/note', 'controllers/notes/show.php');
     $router->delete('/note', 'controllers/notes/destroy.php');
-
-    // EDIT NOTE ROUTER
+    $router->get('/notes/create', 'controllers/notes/create.php');
+    $router->post('/notes/create', 'controllers/notes/store.php');
     $router->get('/note/edit', 'controllers/notes/edit.php');
     $router->patch('/note', 'controllers/notes/update.php');
 
     // REGISTER ROUTER
-    $router->get('/register', 'controllers/register/create.php');
+    $router->get('/register', 'controllers/register/create.php')->only('guest');
     $router->post('/register', 'controllers/register/store.php');
 
     return $router;

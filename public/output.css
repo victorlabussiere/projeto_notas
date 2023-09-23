@@ -677,6 +677,16 @@ video {
   width: 100vw;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-max {
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -755,6 +765,10 @@ video {
 
 .overflow-y-scroll {
   overflow-y: scroll;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded {
