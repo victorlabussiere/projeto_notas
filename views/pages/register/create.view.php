@@ -35,7 +35,7 @@ require base_path('views/partials/topbar.php');
 <script type='module'>
     import FormValidator from './js/FormsValidator.js'
     const form = document.querySelector('form#register_form')
-    FormValidator.validate(form, "input[type='submit']", 'span.errorSpan')
+    FormValidator.validate(form, "label>input", 'span.errorSpan')
 </script>
 
 <?php require base_path('views/partials/footer.php') ?>
