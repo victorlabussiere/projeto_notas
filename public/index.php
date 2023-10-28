@@ -2,8 +2,6 @@
 
 use Core\App;
 
-session_start();
-
 const BASE_PATH = __DIR__ . '/../';
 
 require base_path('Core/Response.php');
@@ -35,4 +33,5 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 // APP RUNNING
+session_start();
 App::resolve('Core\Router')->route($uri, $method);
