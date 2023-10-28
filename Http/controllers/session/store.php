@@ -6,7 +6,7 @@ $db = App::resolve('Core\Database');
 
 try {
     // buscar resultado por e-mail
-    $searchResult = $db->query('select email, senha, nome from users where email = :email', [
+    $searchResult = $db->query('select email, senha, nome, id from users where email = :email', [
         'email' => $_POST['email']
     ])->findOrFail();
 
@@ -22,7 +22,8 @@ try {
     // conceder passport
     $_SESSION['user'] = [
         'email' => $searchResult['email'],
-        'nome' => $searchResult['nome']
+        'nome' => $searchResult['nome'],
+        'id' => $searchResult['id']
     ];
 
     header('location: /');  // direcionar para tela principal com feedback
