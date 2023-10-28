@@ -4,7 +4,7 @@
 
 @layer utilities {
   .topbar {
-    @apply w-screen flex items-center justify-between px-20 bg-lime-300 font-semibold text-lime-600;
+    @apply w-screen flex items-center justify-between px-20 py-3 bg-lime-300 font-semibold text-lime-600;
   }
 
   .topbar > div {
@@ -12,7 +12,11 @@
   }
 
   .topbar_link {
-    @apply flex font-semibold h-full px-10 py-4 cursor-pointer;
+    @apply flex font-semibold h-full px-10 cursor-pointer;
+  }
+
+  .topbar > ul > li:last-child {
+    @apply border-lime-600 border-l;
   }
 
   .section_align {

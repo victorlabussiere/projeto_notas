@@ -584,10 +584,6 @@ video {
   position: relative;
 }
 
-.-bottom-full {
-  bottom: -100%;
-}
-
 .bottom-0 {
   bottom: 0px;
 }
@@ -604,8 +600,17 @@ video {
   top: 0px;
 }
 
+.top-full {
+  top: 100%;
+}
+
 .m-0 {
   margin: 0px;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .ml-3 {
@@ -614,6 +619,10 @@ video {
 
 .mr-1 {
   margin-right: 0.25rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mr-auto {
@@ -630,10 +639,6 @@ video {
 
 .hidden {
   display: none;
-}
-
-.h-4\/6 {
-  height: 66.666667%;
 }
 
 .h-44 {
@@ -681,10 +686,6 @@ video {
   width: min-content;
 }
 
-.w-px {
-  width: 1px;
-}
-
 .w-screen {
   width: 100vw;
 }
@@ -729,12 +730,12 @@ video {
   gap: 0.5rem;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .gap-4 {
   gap: 1rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .gap-6 {
@@ -743,6 +744,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .place-self-start {
@@ -791,10 +796,6 @@ video {
 
 .border-b {
   border-bottom-width: 1px;
-}
-
-.border-l {
-  border-left-width: 1px;
 }
 
 .border-lime-600 {
@@ -878,11 +879,6 @@ video {
   padding-right: 1.25rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -898,9 +894,9 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-6 {
@@ -970,6 +966,11 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.text-green-700 {
+  --tw-text-opacity: 1;
+  color: rgb(21 128 61 / var(--tw-text-opacity));
 }
 
 .text-lime-600 {
@@ -1047,6 +1048,8 @@ video {
   background-color: rgb(190 242 100 / var(--tw-bg-opacity));
   padding-left: 5rem;
   padding-right: 5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(101 163 13 / var(--tw-text-opacity));
@@ -1064,9 +1067,13 @@ video {
   cursor: pointer;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   font-weight: 600;
+}
+
+.topbar > ul > li:last-child {
+  border-left-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(101 163 13 / var(--tw-border-opacity));
 }
 
 .section_align {
