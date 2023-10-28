@@ -27,4 +27,9 @@ require base_path('views/partials/banner.php');
         </form>
     </section>
 </main>
+<script type='module'>
+    import FormValidator from './js/FormValidator.js'
+    const form = document.querySelector('section>form')
+    FormValidator.validate(form, 'label>textarea', '')
+</script>
 <?php require base_path('views/partials/footer.php') ?>
