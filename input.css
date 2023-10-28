@@ -12,7 +12,7 @@
   }
 
   .topbar_link {
-    @apply flex font-semibold h-full px-10 py-4 hover-2px-down;
+    @apply flex font-semibold h-full px-10 py-4 cursor-pointer;
   }
 
   .section_align {
@@ -23,26 +23,6 @@
   main section {
     @apply p-10 shadow rounded-lg bg-slate-50 w-9/12 flex flex-col items-center gap-4 justify-center mx-auto;
   }
-
-  .hover-2px-down {
-    @apply transition duration-300 hover:translate-y-0.5;
-  }
-  .hover-2px-left {
-    @apply transition duration-300 hover:-translate-x-0.5;
-  }
-
-  .iconEnviar::after {
-    content: 'add';
-    font-family: 'Material Symbols Outlined';
-    width: min-content;
-    margin: 0;
-    padding: 0;
-  }
-
-  .errorSpan {
-    @apply text-red-500 mb-4 text-sm self-start;
-  }
-
   .hideTag {
     display: none;
     visibility: hidden;
