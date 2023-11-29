@@ -32,7 +32,6 @@ class Database
 
         return $this;
     }
-
     public function find()
     {
         return $this->statement->fetch();
@@ -43,7 +42,7 @@ class Database
         $result = $this->statement->fetch();
 
         if (!$result) {
-            abort(404);
+            return false;
         }
 
         return $result;

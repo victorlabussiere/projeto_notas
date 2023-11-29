@@ -7,7 +7,7 @@ use Core\Middleware\Permission;
 class Middleware
 {
     /**
-     * @const MAP -> realiza a assimilação de chave enviada no middleware a classe instanciada 
+     * MAP -> realiza a assimilação de chave enviada no middleware a classe instanciada 
      * @example ['$key' => '$value']
      * @param   string $key
      * @param   Permission $value
